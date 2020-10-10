@@ -8,13 +8,15 @@ with open(election_data, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
+    Votes = 0
 
     for row in csvreader:
         election_results = {
-            "Voter ID": int(row[0]),
-            "County" : str(row[1]),
-            "Candidate" : str(row[2])
-    }
+        "Voter ID": int(row[0]),
+        "County" : str(row[1]),
+        "Candidate" : str(row[2])
+         }
+        Votes += 1
 
 
 
@@ -31,9 +33,10 @@ with open(election_data, 'r') as csvfile:
 
 
 
-
-
-
+print(f'Election Results')
+print(f'----------------')
+print(f'Total Votes: {Votes}')
+print(f'----------------')
 
 
 
