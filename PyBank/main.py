@@ -15,6 +15,8 @@ with open(budget_data, 'r') as csvfile:
     First_Time = True
     Greatest_Increase = 0
     Greatest_Decrease = 0
+    Greatest_Month_Increase = ""
+    Greatest_Month_Decrease = ""
 
     for row in csvreader:
         Months += 1
@@ -26,8 +28,10 @@ with open(budget_data, 'r') as csvfile:
             Total_Change = Total_Change + Change
             if Change > Greatest_Increase:
                 Greatest_Increase = Change
+                Greatest_Month_Increase = row[0]
             if Change < Greatest_Decrease:
                 Greatest_Decrease = Change
+                Greatest_Month_Decrease = row[0]
        
         Previous = int(row[1])
         First_Time = False
@@ -35,9 +39,9 @@ with open(budget_data, 'r') as csvfile:
     
 print("Financial Analysis")
 print("------------------")   
-print(Months)
-print(Total_Value)
-print(Total_Change/(Months-1))
-print(Greatest_Increase)
-print(Greatest_Decrease)
+print(f"Total months: {Months}")
+print(f"Total: {Total_Value}")
+print(f"Total Change: {Total_Change/(Months-1)}")
+print(Greatest_Month_Increase, Greatest_Increase)
+print(Greatest_Month_Decrease, Greatest_Decrease)
 
