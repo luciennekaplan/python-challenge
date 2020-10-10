@@ -5,15 +5,21 @@ budget_data = os.path.join('Resources', 'budget_data.csv')
 
 
 with open(budget_data, 'r') as csvfile: 
-     csvreader = csv.reader(csvfile, delimiter=',')
-     csvheader = next(csvreader)
+    csvreader = csv.reader(csvfile, delimiter=',')
+    csv_header = next(csvreader)
 
     Months = 0
     Total_Value = 0 
 
 
-    for row in csvreader
+    for row in csvreader:
         Months += 1
-        Total_Value = 
+        Total_Value += int(row[1])
+        
+    
+print("Financial Analysis")   
+print(Months)
+print(Total_Value)
+
 
 
