@@ -9,6 +9,12 @@ with open(election_data, 'r') as csvfile:
     csv_header = next(csvreader)
 
 
+    for row in csvreader:
+        election_results = {
+            "Voter ID": int(row[0]),
+            "County" : str(row[1]),
+            "Candidate" : str(row[2])
+    }
 
 
 
