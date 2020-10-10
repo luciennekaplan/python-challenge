@@ -14,44 +14,27 @@ with open(election_data, 'r') as csvfile:
 
     for row in csvreader:
         Votes += 1
-        #List of all candidates with votes
-        All_Candidates.Append(row[2])
+        All_Candidates.append(row[2])
         #Percentage of votes each candidate won
         if Candidate_Totals.get(row[2]):
             Candidate_Totals[row[2]] +=1
         else:
             Candidate_Totals[row[2]] = 0
         #Total number of votes each candidate won
-
         #Winner of election based on pop vote
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 print(f'Election Results')
 print(f'----------------')
 print(f'Total Votes: {Votes}')
 print(f'----------------')
-
-
-
-
-
+for name, votes in Candidate_Totals.items():
+    print(name, votes)
 
 
 outpath = os.path.join('Analysis', 'Analysis.Txt')
 with open (outpath, "w") as textfile:
     textfile.write("Election Results\n")
+    textfile.write(f'----------------')
+    textfile.write(f'Total Votes: {Votes}')
+    textfile.write(f'----------------')  
