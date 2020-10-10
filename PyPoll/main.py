@@ -9,14 +9,22 @@ with open(election_data, 'r') as csvfile:
     csv_header = next(csvreader)
 
     Votes = 0
+    All_Candidates = []
+    Candidate_Totals = {}
 
     for row in csvreader:
-        election_results = {
-        "Voter ID": int(row[0]),
-        "County" : str(row[1]),
-        "Candidate" : str(row[2])
-         }
         Votes += 1
+        #List of all candidates with votes
+        All_Candidates.Append(row[2])
+        #Percentage of votes each candidate won
+        if Candidate_Totals.get(row[2]):
+            Candidate_Totals[row[2]] +=1
+        else:
+            Candidate_Totals[row[2]] = 0
+        #Total number of votes each candidate won
+
+        #Winner of election based on pop vote
+
 
 
 
