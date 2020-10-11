@@ -8,12 +8,12 @@ with open(election_data, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
-    Votes = 0
+    Total_Votes = 0
     All_Candidates = []
     Candidate_Totals = {}
 
     for row in csvreader:
-        Votes += 1
+        Total_Votes += 1
         All_Candidates.append(row[2])
         if Candidate_Totals.get(row[2]):
             Candidate_Totals[row[2]] +=1
@@ -23,11 +23,13 @@ with open(election_data, 'r') as csvfile:
 
 print(f'Election Results')
 print(f'----------------')
-print(f'Total Votes: {Votes}')
+print(f'Total Votes: {Total_Votes}')
 print(f'----------------')
 for votes in Candidate_Totals.items():
-    print(votes)
+    print(votes) 
 print(f'----------------')
+
+print(Candidate_Totals)
 
 
 
@@ -35,5 +37,5 @@ outpath = os.path.join('Analysis', 'Analysis.Txt')
 with open (outpath, "w") as textfile:
     textfile.write("Election Results\n")
     textfile.write(f'----------------')
-    textfile.write(f'Total Votes: {Votes}')
+    textfile.write(f'Total Votes: {Total_Votes}')
     textfile.write(f'----------------')  
