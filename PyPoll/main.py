@@ -28,7 +28,10 @@ print(f'Election Results')
 print(f'----------------')
 print(f'Total Votes: {Votes}')
 print(f'----------------')
-print(f'{Candidate_Totals}')
+for votes in Candidate_Totals.items():
+    print(votes)
+
+
 
 
 outpath = os.path.join('Analysis', 'Analysis.Txt')
