@@ -19,10 +19,7 @@ with open(election_data, 'r') as csvfile:
             Candidate_Totals[row[2]] +=1
         else:
             Candidate_Totals[row[2]] = 1
-        #Percentage each candidate won
-        #Total number of votes each candidate won
-        #Winner of election based on pop vote
-
+        
 
 print(f'Election Results')
 print(f'----------------')
@@ -30,7 +27,7 @@ print(f'Total Votes: {Votes}')
 print(f'----------------')
 for votes in Candidate_Totals.items():
     print(votes)
-
+print(f'----------------')
 
 
 
