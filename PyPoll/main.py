@@ -32,10 +32,9 @@ print(f'----------------')
 print(Candidate_Totals)
 
 
-
 outpath = os.path.join('Analysis', 'Analysis.Txt')
 with open (outpath, "w") as textfile:
     textfile.write("Election Results\n")
-    textfile.write(f'----------------')
-    textfile.write(f'Total Votes: {Total_Votes}')
-    textfile.write(f'----------------')  
+    textfile.write(f'----------------\n')
+    textfile.write(f'Total Votes: {Total_Votes}\n')
+    textfile.write(f'----------------\n')  
